@@ -6,6 +6,7 @@
 # print(b)
 # print(c)
 # print(d)
+# ------------------------------------------------------------------------------------------
 
 
 #
@@ -17,9 +18,8 @@
 # print(b)
 # print(c)
 
-# pass
-# continue
-# break
+# ------------------------------------------------------------------------------------------
+
 # dictionary, set ,tuple
 # sorting algorithm
 # sorted function key usage
@@ -47,8 +47,9 @@
 # pprint(counter)
 #
 # #find index of each alphabet in a word
-#
+#import string
 # def get_index_naive(word):
+#
 #     result = [-1] * len(string.ascii_lowercase)
 #     for i in range(len(word)):
 #         char = word[i]
@@ -70,6 +71,7 @@
 # get_index_naive('baekjoon')
 # get_index('baekjoon')
 
+# ------------------------------------------------------------------------------------------
 
 
 
@@ -105,3 +107,89 @@
 #     ll.append(i)
 # ll.printll()
 
+# ------------------------------------------------------------------------------------------
+
+
+# print(~2)  # ~2 will turn all 0s to 1s and 1s to 0s in the binary scaled integer
+# print(3 & 5) # will turn find all the common 1s if two nums were binary scared
+# print(3 | 5) # will turn give 1s if any of the ditis have 1 nums were binary scared
+# print(3 ^ 5) # will turn 1 for the digit if two nums have different value for the digie
+# #3       : 00000000 00000000 00000000 00000011
+# #5       : 00000000 00000000 00000000 00000101
+# #3 ^ 5   : 00000000 00000000 00000000 00000110
+# ------------------------------------------------------------------------------------------
+
+# i = 0
+# while i < 10:
+#     i += 1
+#     if i % 2 == 0:
+#         continue
+#     print(i)
+#
+# i = 0
+# while i < 10:
+#     i += 1
+#     if i % 5 == 0:
+#         break
+#     print(i)
+#
+# i = 0
+# while i < 10:
+#     i += 1
+#     if i % 5 == 0:
+#         pass
+#     print(i)
+# ------------------------------------------------------------------------------------------
+# string = "my name is junho"
+# print(string.find("junho"))
+# print(string.find("hello")) #return -1 if none
+# print(string.index("junho"))
+# print(string.index("hello")) #return error if none.
+# # for findall, you need general expression
+# ------------------------------------------------------------------------------------------
+# a =set('abcdcba')
+# print(a)
+# a.add('f')
+# print(a)
+# a.remove('c')
+# print(a)
+# # ------------------------------------------------------------------------------------------
+#
+#
+# import collections
+#
+# word = "hello world"
+# counter = collections.Counter(word) #you can use all the feature of dictionary
+# print(counter)
+# max_count = -1
+# for letter in counter:
+#     if counter[letter] > max_count:
+#         max_count = counter[letter]
+#         max_letter = letter
+#
+# print(max_letter,max_count)
+# print(collections.Counter(word).most_common(3))
+#
+class Node:
+    def __init__(self,val, next):
+        self.val = val
+        self.next = next
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def is_empty(self):
+        return self.top is None
+
+
+    def push(self,val):
+        self.top = Node(val,self.top)
+
+    def pop(self):
+        if not self.top:
+            return None
+
+        node = self.top
+        self.top = self.top.next
+        return node.val

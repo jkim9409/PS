@@ -26,7 +26,7 @@ class LinkedList:
     def deletekey(self,keyval):
 
         temp = self.head
-        if temp is None:
+        if temp is not None:
             if temp.var == keyval:
                 self.head = temp.next
 
