@@ -170,26 +170,88 @@
 # print(max_letter,max_count)
 # print(collections.Counter(word).most_common(3))
 #
-class Node:
-    def __init__(self,val, next):
-        self.val = val
-        self.next = next
+# class Node:
+#     def __init__(self,val, next):
+#         self.val = val
+#         self.next = next
+#
+# class Stack:
+#     def __init__(self):
+#         self.top = None
+#
+#     def is_empty(self):
+#         return self.top is None
+#
+#
+#     def push(self,val):
+#         self.top = Node(val,self.top)
+#
+#     def pop(self):
+#         if not self.top:
+#             return None
+#
+#         node = self.top
+#         self.top = self.top.next
+#         return node.val
 
-class Stack:
-    def __init__(self):
-        self.top = None
+#------------------------------------------------------------------------------------
 
-    def is_empty(self):
-        return self.top is None
+# #list comprehension
+# num = [1,2,3,4,5,6]
+# newlist = sum([x for x in num if x%2 ==0])
+# print(newlist)
+#
+# words = ['apple','banana','kiwi']
+# sentence = 'i like apple and banana'
+# print([word in sentence for word in words])
+#------------------------------------------------------------------------------------
 
+#collections practice
+# import collections
+# a = collections.defaultdict(str)
+# b = a['hello']
+# print(b)
+# a = {}
+# b = a['hello']
+# print(b)  #this will give error when we can't find key
 
-    def push(self,val):
-        self.top = Node(val,self.top)
+# import collections
+# a = [1,1,2,2,2,2,3,3,4]
+# b = collections.Counter(a)
+# for i in b:
+#     print(i,b[i])
+#------------------------------------------------------------------------------------
+# #using * and **. single * used to unpack tuple or list. and double *(**) is used to unpack key,value pair
+#
+# fruits = ['lemon','pear','watermelon','tomato']
+# print(fruits[0],fruits[1],fruits[2],fruits[3])
+# print(*fruits) #how we unpack list uisng *
+#
+# a, *b = [1,2,3,4]
+# print(a)
+# print(b)
+#
+# *a,b = [1,2,3,4]
+# print(a)
+# print(b)
 
-    def pop(self):
-        if not self.top:
-            return None
+# date_info = {'year':'2020','month':'01','day':'7'}
+# new_info = {**date_info,'day':'14'}
+# print(new_info)
+#------------------------------------------------------------------------------------
+# zip()
 
-        node = self.top
-        self.top = self.top.next
-        return node.val
+# a = (1,2,3,4,5)
+# b = (2,3,4,5)
+# c = (3,4,5)
+
+# a = [1,2,3,4,5]
+# b = [2,3,4,5]
+# c = [3,4,5]
+
+# print(list(zip(a,b)))
+# print(list(zip(a,b,c)))
+# print(list(zip(a,b,c))[0])
+# print(list(zip(a,b,c))[0][0])
+
+#------------------------------------------------------------------------------------

@@ -13,17 +13,17 @@
 # Ex3:
 # input: temperatures = [30,60,90]
 # output: [1,1,0]
+##Hint! research monotinic stack. "put stuffs in Stack in sorted order" is the KEY
 
-
-def dailyTemperature_textbook(T):
-    answer = [0] * len(T)
-    stack = []
-    for i, cur in enumerate(T):
-        while stack and cur > T[stack[-1]]:
-            last = stack.pop()
-            answer[last] = i - last
-        stack.append(i)
-    return answer
+# def dailyTemperature_textbook(T):
+#     answer = [0] * len(T)
+#     stack = []
+#     for i, cur in enumerate(T):
+#         while stack and cur > T[stack[-1]]:
+#             last = stack.pop()
+#             answer[last] = i - last
+#         stack.append(i)
+#     return answer
 
 # def dailyTemperature_mysolution(T):
 #     ans = [0] * len(T)
@@ -34,6 +34,14 @@ def dailyTemperature_textbook(T):
 #                 break
 #     return ans
 
+def stackprac(temps):
+    ans = [0] * len(temps)
+    stack = []
+    for i, cur in enumerate(temps):
+        while stack and cur > temps[stack[-1]]:
+            last = stack.pop()
+            ans[last] = i - last
+        stack.append(i)
 
 
 print(dailyTemperature_textbook([73,74,75,71,69,72,76,73]))
