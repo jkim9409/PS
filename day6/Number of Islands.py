@@ -38,7 +38,7 @@ def island_dfs_stack(grid):
             while stack:
                 x, y = stack.pop()
                 grid[x][y] = '0' # 스택에 쌓인 모든 친구들을 1 에서 0 으로 바꿔준다다
-               for i in range(4):
+                for i in range(4):
                     nx = x + dx[i]
                     ny = y + dy[i]
                     if nx < 0 or nx >= rows or ny < 0 or ny >= cols or grid[nx][ny] != '1':
