@@ -47,27 +47,23 @@ from collections import deque
 #     dfs(0, [])
 #     return result
 
-# def combinationSum(candidates):
-#     result = []
-#     def dfs(path):
-#         if len(path) == len(candidates):
-#             if path not in result:
-#                 result.append(path)
-#             return
-#         for i in range(0, len(candidates)):
-#             if path not in result:
-#                 result.append(path)
-#             dfs(path + [candidates[i]])
-#     dfs([])
-#     return result
+def combinationSum(candidates):
+    result = []
+    def dfs(path):
+        if len(path) == len(candidates)+1:
+            # if path not in result:
+            #     result.append(path)
+            return
+        for i in range(0, len(candidates)):
+            result.append(path)
+            dfs(path + [candidates[i]])
+    dfs([])
+    return result
 #
 #
-# candidates = [2,3,6,7]
-# target = 7
-# print(combinationSum(candidates))
-# print(len(combinationSum(candidates)))
-# print(4+4*4+4*4*4+4*4*4*4)
+candidates = [2,3,6,7]
+target = 7
+print(combinationSum(candidates))
+print(len(combinationSum(candidates)))
+print(4+4*4+4*4*4+4*4*4*4)
 
-a = [1,2,3]
-b = [4]
-print(a+b)
