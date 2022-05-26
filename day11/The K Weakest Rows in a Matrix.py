@@ -38,6 +38,13 @@ def kWeakestRows(mat,k):
 
     return ans
 
+# pythonic way is not good for beginners
+def kWeakestRows_peersolution1(mat,k):
+
+    sorted_list = sorted(range(len(mat)), key = lambda x:mat[x].count(1))
+
+    return sorted_list[:k]
+
 
 mat1 = [[1,1,0,0,0],
  [1,1,1,1,0],
@@ -55,3 +62,6 @@ k2 = 2
 
 print(kWeakestRows(mat1,k1))
 print(kWeakestRows(mat2,k2))
+
+print(kWeakestRows_peersolution1(mat1,k1))
+print(kWeakestRows_peersolution1(mat2,k2))

@@ -16,6 +16,25 @@ def maxProduct(nums):
     ans = (biggests[0]-1) * (biggests[1]-1)
     return ans
 
+def maxProduct_peersolution1(nums):
+    nums.sort()
+
+    return (nums[-1]-1)*(nums[-2]-1)
+
+def maxProduct_peersolution2(nums):
+    maxhq = []
+    for i in nums:
+        heapq.heappush(maxhq,(-i,i))
+
+    max1 = heapq.heappop(maxhq)[1]
+    max2 = heapq.heappop(maxhq)[1]
+    return (max1-1)*(max2-1)
+
 print(maxProduct([3,4,5,2]))
 print(maxProduct([1,5,4,5]))
 print(maxProduct([3,7]))
+print(maxProduct_peersolution1([3,4,5,2]))
+print(maxProduct_peersolution1([1,5,4,5]))
+print(maxProduct_peersolution1([3,7]))
+print(maxProduct_peersolution2([1,5,4,5]))
+print(maxProduct_peersolution2([3,7]))
